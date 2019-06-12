@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-size: 14px;
+  ul{
+    list-style: none;
+    li{
+       border-radius: 30px;
+      column-count: 2;
+      color: red;
+      a{
+        color: green;
+      }
+    }
+  }
+
+}
