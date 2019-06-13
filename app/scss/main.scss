@@ -1,16 +1,7 @@
-body {
-  margin: 0;
-  font-size: 14px;
-  ul{
-    list-style: none;
-    li{
-       border-radius: 30px;
-      column-count: 2;
-      color: red;
-      a{
-        color: green;
-      }
-    }
-  }
+@import "base/index";
 
+.canvas-test{
+  //max-width: 1000px;
+  //margin: 100px auto;
+  //outline: 1px solid;
 }
