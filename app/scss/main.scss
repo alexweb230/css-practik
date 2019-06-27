@@ -1,16 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+$level-one: translateZ(3rem);
+$level-two: translateZ(6rem);
+$level-three: translateZ(9rem);
+
+$fw-normal: 400;
+$fw-bold: 700;
+$clr: #b7c9e5;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-size: 14px;
-  ul{
-    list-style: none;
-    li{
-       border-radius: 30px;
-      column-count: 2;
-      color: red;
-      a{
-        color: green;
+  display: grid;
+  place-items: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+.card {
+  width: 400px;
+  &-content {
+    text-align: center;
+    position: relative;
+    padding: 15em 5em;
+    border: 1px solid;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+    .card-front,
+    .card-back {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 5em 3em;
+      display: grid;
+      align-content: center;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+    }
+    .card-front {
+      background-color: $clr;
+      background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/fair.jpg');
+      background-size: cover;
+      background-blend-mode: overlay;
+      color: #333;
+      .card-title{
+        font-size: 3.5rem;
+        order: 2;
+        text-transform: uppercase;
+        transform:$level-three;
+      }
+      .card-subtitle{
+        letter-spacing: 4px;
+        font-size: .75rem;
+        opacity: .7;
+        text-transform: uppercase;
+        transform:$level-two;
       }
     }
-  }
+    .card-back{
+      background: #333;
+      transform: rotateY(.5turn);
+      color:$clr;
+      .card-body{
+        font-size: 1.5rem;
+        line-height: 1.6;
+        transform: $level-two;
+      }
+    }
 
+  }
+  &:hover {
+    .card-content {
+      transform: rotateY(.5turn);
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
